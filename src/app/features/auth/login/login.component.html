@@ -1,0 +1,94 @@
+<div class="login-wrapper">
+
+  <!-- HEADER -->
+  <header class="login-header">
+    <img src="logo-a365.jpg" alt="A365" class="logo-img" />
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="login-main">
+    <div class="login-card">
+
+      <!-- Imagen izquierda -->
+      <div class="login-image">
+        <img src="login-bg.webp" alt="A365 tecnología" />
+      </div>
+
+      <!-- Formulario -->
+      <div class="login-form-section">
+        <h1 class="login-title">BIENVENIDO</h1>
+        <p class="login-subtitle">Por favor, ingresa tu código y contraseña</p>
+
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Código</mat-label>
+            <input
+              matInput
+              formControlName="codigo"
+              placeholder="Ingresa tu código"
+              autocomplete="username"
+            />
+            <mat-error *ngIf="codigo?.hasError('required')">
+              El código es requerido
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Contraseña</mat-label>
+            <input
+              matInput
+              formControlName="password"
+              [type]="hidePassword ? 'password' : 'text'"
+              autocomplete="current-password"
+            />
+            <button
+              mat-icon-button
+              matSuffix
+              type="button"
+              (click)="hidePassword = !hidePassword"
+            >
+              <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+            <mat-error *ngIf="password?.hasError('required')">
+              La contraseña es requerida
+            </mat-error>
+            <mat-error *ngIf="password?.hasError('minlength')">
+              Mínimo 6 caracteres
+            </mat-error>
+          </mat-form-field>
+
+          <div class="form-options">
+            <mat-checkbox formControlName="recuerdame" color="primary">
+              Recuérdame
+            </mat-checkbox>
+            <a href="#" class="forgot-link">¿Olvidaste la contraseña?</a>
+          </div>
+
+          <button
+            mat-raised-button
+            type="submit"
+            class="btn-ingresar"
+            [disabled]="loginForm.invalid || isLoading"
+          >
+            <mat-spinner *ngIf="isLoading" diameter="20"></mat-spinner>
+            <span *ngIf="!isLoading">Ingresar</span>
+          </button>
+
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="login-footer">
+    <span>© 2026 Impulsa A365 Todos los derechos reservados por Group16</span>
+    <div class="footer-social">
+      <a href="#" class="social-icon">in</a>
+      <a href="#" class="social-icon">f</a>
+      <a href="#" class="social-icon">@</a>
+    </div>
+  </footer>
+
+</div>

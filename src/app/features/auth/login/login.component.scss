@@ -1,0 +1,146 @@
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+.login-header {
+  background: #ffffff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.logo-img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+}
+
+.login-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #f5f7fa;
+}
+
+.login-card {
+  background: #ffffff;
+  border: 2.5px solid #1a2b5e;
+  border-radius: 8px;
+  padding: 2.5rem 3rem;
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+}
+
+.login-image {
+  flex: 1;
+  max-width: 320px;
+
+  img {
+    width: 100%;
+    border-radius: 4px;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.login-form-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a2b5e;
+  letter-spacing: 0.05em;
+  margin: 0 0 4px;
+}
+
+.login-subtitle {
+  font-size: 0.78rem;
+  color: #888;
+  margin: 0 0 1.2rem;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.25rem 0 1rem;
+}
+
+.forgot-link {
+  font-size: 0.75rem;
+  color: #1a2b5e;
+  text-decoration: underline;
+
+  &:hover {
+    color: #c0392b;
+  }
+}
+
+.btn-ingresar {
+  width: 100%;
+  background-color: #1a56db !important;
+  color: #ffffff !important;
+  font-size: 0.9rem;
+  font-weight: 500;
+  height: 42px;
+  border-radius: 4px !important;
+  letter-spacing: 0.05em;
+
+  mat-spinner {
+    display: inline-block;
+    margin: auto;
+  }
+}
+
+.login-footer {
+  background: #1a2b5e;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  span {
+    font-size: 0.72rem;
+    color: #8fa8d4;
+  }
+}
+
+.footer-social {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #2e4a8e;
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+
+  &:hover {
+    background: #4a6ab0;
+  }
+}
