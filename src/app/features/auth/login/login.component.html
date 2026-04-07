@@ -19,6 +19,12 @@
         <h1 class="login-title">BIENVENIDO</h1>
         <p class="login-subtitle">Por favor, ingresa tu código y contraseña</p>
 
+        <!-- Mensaje de error del servidor -->
+        <div class="error-banner" *ngIf="errorMessage">
+          <mat-icon>error_outline</mat-icon>
+          <span>{{ errorMessage }}</span>
+        </div>
+
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 
           <mat-form-field appearance="outline" class="full-width">
